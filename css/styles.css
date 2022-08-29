@@ -61,6 +61,7 @@ body {
   --border-color: #eeeeee;
   --icone-color: #afb1b8;
   --icone-bg-color: #f5f4fa;
+  --timing-functione: cubic-bezier(0.4, 0, 0.2, 1);
   /* --technical-color: tomato; */
 }
 
@@ -124,7 +125,7 @@ body {
   margin-left: auto;
 }
 
-.auth-nav .link {
+.auth-nav {
   padding-top: 32px;
   padding-bottom: 32px;
 }
@@ -133,13 +134,11 @@ body {
   margin-left: 50px;
 }
 
-.link-focus a:hover {
-  color: var(--beckground-color);
-}
-
+.link-focus a:hover,
 .link-focus a:focus {
-  outline: none;
   color: var(--beckground-color);
+  outline: none;
+  transition: box-shadow 250ms var(--timing-functione);
 }
 
 .nav-link,
@@ -150,6 +149,11 @@ body {
   letter-spacing: 0.02em;
   text-decoration: none;
   color: var(--text-color);
+
+  position: relative;
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 .contact-nav {
@@ -168,7 +172,40 @@ body {
 .auth-nav a:focus {
   color: var(--beckground-color);
   fill: var(--beckground-color);
+  transition: box-shadow 250ms var(--timing-functione);
 }
+.site-nav .nav-link::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: '';
+  display: block;
+
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--beckground-color);
+  opacity: 0;
+  transition: opacity 250ms var(--timing-functione);
+}
+.site-nav .nav-link:hover::after {
+  opacity: 1;
+}
+.site-nav .emphasize::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: '';
+  display: block;
+
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--beckground-color);
+  opacity: 0;
+  opacity: 1;
+}
+
 /* ================== section_1 ==================== */
 .b-section {
   padding-top: 200px;
@@ -218,6 +255,63 @@ body {
   background-color: var(--button-hover-focus);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  transition: transform 250ms var(--timing-functione);
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity 250ms var(--timing-functione);
+}
+
+.backdrop.is-hidden.modal {
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 528px;
+  height: 581px;
+  padding: 30px;
+  background-color: #fff;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms var(--timing-functione);
+}
+
+/* .about-discript .close-button {
+  position: absolute;
+padding-top: 8px;
+
+} */
+
+.close-button,  .close-img {
+margin-top:  8px;
+margin-right: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+    position: absolute;
+      top: 0;
+      right: 0;
+  background-color: var (var(--body-background-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
 }
 
 /* ============================ cection-2================= */
@@ -315,6 +409,37 @@ body {
   margin-left: 30px;
 }
 
+.about-discript {
+  position: absolute;
+  margin: 0;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  color: var(--body-background-color);
+  text-transform: uppercase;
+}
+.section-3 .items {
+  position: relative;
+  display: inline-block;
+}
+
+.section-3 .items::before {
+  display: inline-block;
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 25%;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
 /* ======================== section-4 ========================*/
 
 .header-text-section-4,
@@ -396,11 +521,13 @@ body {
 .team-links:focus {
   color: var(--button-hover-focus);
   background-color: var(--beckground-color);
+  transition: transform 250ms var(--timing-functione);
 }
 
 .team-links:hover .icones,
 .team-links:focus .icones {
   fill: var(--body-background-color);
+  transition: transform 250ms var(--timing-functione);
 }
 
 /* ====================== section-5 =======================================*/
@@ -439,6 +566,7 @@ body {
 .clients-links:focus {
   fill: var(--beckground-color);
   border-color: var(--beckground-color);
+  transition: transform 250ms var(--timing-functione);
 }
 
 /* =======================Footer===========================================*/
@@ -490,6 +618,7 @@ body {
 .ul-address a:focus {
   color: var(--beckground-color);
   outline: none;
+  transition: transform 250ms var(--timing-functione);
 }
 
 .sochmed-conteiner {
@@ -500,7 +629,6 @@ body {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
-
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.03em;
@@ -566,6 +694,7 @@ body {
 .foot-links:focus {
   color: var(--body-background-color);
   background-color: var(--button-hover-focus);
+  transition: transform 250ms var(--timing-functione);
 }
 
 .foot-links {
@@ -600,6 +729,7 @@ body {
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   border-color: transparent;
+  transition: transform 250ms var(--timing-functione);
 }
 
 .conteiner-port-text {
@@ -650,6 +780,7 @@ body {
   display: block;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition: transform 250ms var(--timing-functione);
 }
 
 .portfolio-button > .items {
@@ -672,4 +803,38 @@ body {
 
 .elements-portfolio > .items:not(:nth-child(-n + 3)) {
   margin-top: 30px;
+}
+.port-discript {
+  position: relative;
+  overflow: hidden;
+}
+
+.port-curd-discript {
+  margin: 0;
+  color: var(--body-background-color);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.port-paragraph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(33, 150, 243, 0.9);
+  padding: 0 24px;
+  height: 100%;
+  width: 100%;
+
+  transform: translateY(101%);
+}
+
+.picture-decoration:hover .port-paragraph,
+.picture-decoration:focus .port-paragraph {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 250ms var(--timing-functione);
 }
