@@ -257,6 +257,7 @@ body {
   border-radius: 4px;
   transition: transform 250ms var(--timing-functione);
 }
+
 .backdrop {
   position: fixed;
   top: 0;
@@ -284,36 +285,34 @@ body {
   width: 528px;
   height: 581px;
   padding: 30px;
-  background-color: #fff;
+  background-color: var(--body-background-color);;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms var(--timing-functione);
 }
 
-/* .about-discript .close-button {
+.close-button {
   position: absolute;
-padding-top: 8px;
-
-} */
-
-.close-button,  .close-img {
-margin-top:  8px;
-margin-right: 8px;
+  top: 0;
+  right: 0;
+  margin-top: 8px;
+  margin-right: 8px;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   cursor: pointer;
-    position: absolute;
-      top: 0;
-      right: 0;
-  background-color: var (var(--body-background-color));
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fff;
+  background-color: var(--body-background-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
-
 }
 
+.close-img {
+  background-color: var(--body-background-color);
+}
+.text-backdrop {
+  margin-top: 50%;
+}
 /* ============================ cection-2================= */
 .section-horizontal {
   display: flex;
@@ -393,7 +392,7 @@ margin-right: 8px;
 
 /* ====================== section-3 ===================== */
 
-.about {
+.section.about {
   padding-top: 0;
 }
 
@@ -401,9 +400,9 @@ margin-right: 8px;
   display: flex;
 }
 
-.section-3 > .items {
+/* .section-3 > .items {
   display: inline-block;
-}
+} */
 
 .section-3 .items + .items {
   margin-left: 30px;
@@ -424,6 +423,7 @@ margin-right: 8px;
   color: var(--body-background-color);
   text-transform: uppercase;
 }
+
 .section-3 .items {
   position: relative;
   display: inline-block;
