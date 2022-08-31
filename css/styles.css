@@ -114,6 +114,7 @@ body {
 .site-nav {
   display: flex;
   margin-left: 93px;
+  transition: transform 250ms var(--timing-functione);
 }
 
 .site-nav .items:not(:last-child) {
@@ -172,7 +173,7 @@ body {
 .auth-nav a:focus {
   color: var(--beckground-color);
   fill: var(--beckground-color);
-  transition: box-shadow 250ms var(--timing-functione);
+
 }
 .site-nav .nav-link::after {
   position: absolute;
@@ -186,7 +187,7 @@ body {
   border-radius: 2px;
   background-color: var(--beckground-color);
   opacity: 0;
-  transition: opacity 250ms var(--timing-functione);
+
 }
 .site-nav .nav-link:hover::after {
   opacity: 1;
@@ -248,6 +249,7 @@ body {
   color: var(--body-background-color);
   border-color: transparent;
   padding: 8px 30px;
+  transition: transform 250ms var(--timing-functione);
 }
 
 .button:hover,
@@ -255,7 +257,7 @@ body {
   background-color: var(--button-hover-focus);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
-  transition: transform 250ms var(--timing-functione);
+ 
 }
 
 .backdrop {
@@ -264,6 +266,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 2;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
   transition: opacity 250ms var(--timing-functione);
@@ -516,12 +519,13 @@ body {
   color: var(--icone-color);
   fill: currentColor;
   outline: 2px solid var(--technical-color);
+  transition: transform 250ms var(--timing-functione);
 }
 .team-links:hover,
 .team-links:focus {
   color: var(--button-hover-focus);
   background-color: var(--beckground-color);
-  transition: transform 250ms var(--timing-functione);
+
 }
 
 .team-links:hover .icones,
@@ -553,6 +557,7 @@ body {
   border: 1px solid var(--icone-color);
   border-radius: 4px;
   outline: 2px solid var(--technical-color);
+  transition: transform 250ms var(--timing-functione);
 }
 
 .clients > .icones {
@@ -566,7 +571,7 @@ body {
 .clients-links:focus {
   fill: var(--beckground-color);
   border-color: var(--beckground-color);
-  transition: transform 250ms var(--timing-functione);
+ 
 }
 
 /* =======================Footer===========================================*/
@@ -599,6 +604,7 @@ body {
   letter-spacing: 0.03em;
   text-decoration: none;
   color: var(--body-background-color);
+  transition: transform 250ms var(--timing-functione);
 }
 
 .contact-footer {
@@ -612,7 +618,7 @@ body {
 
 .ul-address > .items:not(:last-child) {
   margin-bottom: 9px;
-}
+  }
 
 .ul-address a:hover,
 .ul-address a:focus {
@@ -689,12 +695,13 @@ body {
   color: var(--body-background-color);
   fill: currentColor;
   background-color: rgba(255, 255, 255, 0.1);
+  transition: transform 250ms var(--timing-functione);
 }
 .foot-links:hover,
 .foot-links:focus {
   color: var(--body-background-color);
   background-color: var(--button-hover-focus);
-  transition: transform 250ms var(--timing-functione);
+
 }
 
 .foot-links {
@@ -715,6 +722,7 @@ body {
   display: inline-block;
   padding: 6px 22px;
   background-color: var(--teams-bacground-color);
+  transition: transform 250ms var(--timing-functione);
 }
 
 .button-portfolio:hover,
@@ -729,8 +737,7 @@ body {
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   border-color: transparent;
-  transition: transform 250ms var(--timing-functione);
-}
+ }
 
 .conteiner-port-text {
   display: block;
@@ -828,7 +835,7 @@ body {
   padding: 0 24px;
   height: 100%;
   width: 100%;
-
+transition: transform 250ms var(--timing-functione);
   transform: translateY(101%);
 }
 
@@ -836,5 +843,4 @@ body {
 .picture-decoration:focus .port-paragraph {
   transform: translateY(0);
   opacity: 1;
-  transition: transform 250ms var(--timing-functione);
-}
+ }
