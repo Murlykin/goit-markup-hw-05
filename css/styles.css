@@ -114,7 +114,7 @@ body {
 .site-nav {
   display: flex;
   margin-left: 93px;
-  transition: transform 250ms var(--timing-functione);
+  transition: color 250ms var(--timing-functione), fill 250ms var(--timing-functione);
 }
 
 .site-nav .items:not(:last-child) {
@@ -135,11 +135,14 @@ body {
   margin-left: 50px;
 }
 
+.link-focus {
+  transition: color 250ms var(--timing-functione), fill 250ms var(--timing-functione);
+}
+
 .link-focus a:hover,
 .link-focus a:focus {
   color: var(--beckground-color);
   outline: none;
-  transition: box-shadow 250ms var(--timing-functione);
 }
 
 .nav-link,
@@ -150,7 +153,6 @@ body {
   letter-spacing: 0.02em;
   text-decoration: none;
   color: var(--text-color);
-
   position: relative;
   display: block;
   padding-top: 32px;
@@ -173,7 +175,6 @@ body {
 .auth-nav a:focus {
   color: var(--beckground-color);
   fill: var(--beckground-color);
-
 }
 .site-nav .nav-link::after {
   position: absolute;
@@ -181,13 +182,11 @@ body {
   bottom: 0;
   content: '';
   display: block;
-
   width: 100%;
   height: 4px;
   border-radius: 2px;
   background-color: var(--beckground-color);
   opacity: 0;
-
 }
 .site-nav .nav-link:hover::after {
   opacity: 1;
@@ -249,7 +248,8 @@ body {
   color: var(--body-background-color);
   border-color: transparent;
   padding: 8px 30px;
-  transition: transform 250ms var(--timing-functione);
+  transition: background-color 250ms var(--timing-functione),
+    box-shadow 250ms var(--timing-functione), border-radius 250ms var(--timing-functione);
 }
 
 .button:hover,
@@ -257,7 +257,6 @@ body {
   background-color: var(--button-hover-focus);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
- 
 }
 
 .backdrop {
@@ -288,7 +287,7 @@ body {
   width: 528px;
   height: 581px;
   padding: 30px;
-  background-color: var(--body-background-color);;
+  background-color: var(--body-background-color);
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms var(--timing-functione);
 }
@@ -308,6 +307,7 @@ body {
   justify-content: center;
   background-color: var(--body-background-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: transform 250ms var(--timing-functione);
 }
 
 .close-img {
@@ -403,9 +403,9 @@ body {
   display: flex;
 }
 
-/* .section-3 > .items {
+.section-3 > .items {
   display: inline-block;
-} */
+}
 
 .section-3 .items + .items {
   margin-left: 30px;
@@ -519,19 +519,17 @@ body {
   color: var(--icone-color);
   fill: currentColor;
   outline: 2px solid var(--technical-color);
-  transition: transform 250ms var(--timing-functione);
+  transition: color 250ms var(--timing-functione), background-color 250ms var(--timing-functione);
 }
 .team-links:hover,
 .team-links:focus {
   color: var(--button-hover-focus);
   background-color: var(--beckground-color);
-
 }
 
 .team-links:hover .icones,
 .team-links:focus .icones {
   fill: var(--body-background-color);
-  transition: transform 250ms var(--timing-functione);
 }
 
 /* ====================== section-5 =======================================*/
@@ -557,7 +555,7 @@ body {
   border: 1px solid var(--icone-color);
   border-radius: 4px;
   outline: 2px solid var(--technical-color);
-  transition: transform 250ms var(--timing-functione);
+  transition: fill 250ms var(--timing-functione), border-color 250ms var(--timing-functione);
 }
 
 .clients > .icones {
@@ -571,7 +569,6 @@ body {
 .clients-links:focus {
   fill: var(--beckground-color);
   border-color: var(--beckground-color);
- 
 }
 
 /* =======================Footer===========================================*/
@@ -604,7 +601,6 @@ body {
   letter-spacing: 0.03em;
   text-decoration: none;
   color: var(--body-background-color);
-  transition: transform 250ms var(--timing-functione);
 }
 
 .contact-footer {
@@ -618,13 +614,14 @@ body {
 
 .ul-address > .items:not(:last-child) {
   margin-bottom: 9px;
-  }
-
+}
+.ul-address {
+  transition: color 250ms var(--timing-functione);
+}
 .ul-address a:hover,
 .ul-address a:focus {
   color: var(--beckground-color);
   outline: none;
-  transition: transform 250ms var(--timing-functione);
 }
 
 .sochmed-conteiner {
@@ -695,13 +692,12 @@ body {
   color: var(--body-background-color);
   fill: currentColor;
   background-color: rgba(255, 255, 255, 0.1);
-  transition: transform 250ms var(--timing-functione);
+  transition: color 250ms var(--timing-functione), background-color 250ms var(--timing-functione);
 }
 .foot-links:hover,
 .foot-links:focus {
   color: var(--body-background-color);
   background-color: var(--button-hover-focus);
-
 }
 
 .foot-links {
@@ -722,7 +718,7 @@ body {
   display: inline-block;
   padding: 6px 22px;
   background-color: var(--teams-bacground-color);
-  transition: transform 250ms var(--timing-functione);
+  transition: color 250ms var(--timing-functione), background-color 250ms var(--timing-functione);
 }
 
 .button-portfolio:hover,
@@ -737,7 +733,7 @@ body {
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
   border-color: transparent;
- }
+}
 
 .conteiner-port-text {
   display: block;
@@ -781,13 +777,14 @@ body {
 .decoration {
   text-decoration: none;
 }
-
+.picture-decoration {
+  transition: color 250ms var(--timing-functione), background-color 250ms var(--timing-functione);
+}
 .picture-decoration:hover,
 .picture-decoration:focus {
   display: block;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-  transition: transform 250ms var(--timing-functione);
 }
 
 .portfolio-button > .items {
@@ -835,7 +832,7 @@ body {
   padding: 0 24px;
   height: 100%;
   width: 100%;
-transition: transform 250ms var(--timing-functione);
+  transition: opacity 250ms var(--timing-functione);
   transform: translateY(101%);
 }
 
@@ -843,4 +840,4 @@ transition: transform 250ms var(--timing-functione);
 .picture-decoration:focus .port-paragraph {
   transform: translateY(0);
   opacity: 1;
- }
+}
